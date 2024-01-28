@@ -1,7 +1,7 @@
 import React from 'react';
 import AvailableRooms from '../../../forms/AvailableRooms';
 import RoomCard from '../../../roomscards/RoomCard';
-
+import NavBar from '../../../NavBar';
 
 const AllBookings = () => {
     return (
