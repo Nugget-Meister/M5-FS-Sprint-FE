@@ -1,5 +1,4 @@
 import React from "react";
-// import "./AvailableRooms.css"
 
 export default function AvailableRooms() {
   return (
@@ -11,7 +10,7 @@ export default function AvailableRooms() {
       <input type="number" />
       <label>Capacity:</label>
       <input type="number" />
-      {/* <button onClick={DoSomething}>Find</button> */}
+      <button onClick={DoSomething}>Find</button>
     </div>
   );
 }
