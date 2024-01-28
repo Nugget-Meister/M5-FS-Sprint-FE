@@ -1,9 +1,11 @@
 import React from 'react';
 
+
 const AllBookings = () => {
     return (
         <div>
-            All
+            <NavBar/>
+            
         </div>
     );
 }
