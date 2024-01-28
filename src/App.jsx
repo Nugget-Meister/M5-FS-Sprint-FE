@@ -18,11 +18,11 @@ function App() {
     <Router>
       <main>
         <Routes>
-          <Route path='/' element={<AllBookings/>}/>
+          <Route path='/' element={<AllES/>}/>
           <Route path='/bookings' element={<AllBookings/>}/>
           <Route path='/bookings/new' element={<NewBookings/>}/>
           <Route path='/bookings/:id' element={<DetailsBookings/>}/>
-          <Route path='/events' element={<AllES/>}/>
+          {/* <Route path='/events' element={<AllES/>}/> */}
           <Route path='/events/new' element={<NewES/>}/>
           <Route path='/events/:id' element={<DetailsES/>}/>
         </Routes>
