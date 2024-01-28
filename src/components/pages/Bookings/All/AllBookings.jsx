@@ -6,8 +6,8 @@ import NavBar from '../../../NavBar';
 const AllBookings = () => {
     return (
         <div>
-            <NavBar/>
-            <AvailableRooms/>
+            {/* <NavBar/> */}
+            {/* <AvailableRooms/> */}
             <RoomCard/>
         </div>
     );
