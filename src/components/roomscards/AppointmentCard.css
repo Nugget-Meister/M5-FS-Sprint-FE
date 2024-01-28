@@ -1,7 +1,7 @@
-.RoomCard {
+.AppointmentCard {
     border-style: solid;
     border-color: black;
-    width: 20rem;
+    width: 30rem;
     height: 6rem;
     border-width: 0.15rem;
     line-height: 0.15rem;
