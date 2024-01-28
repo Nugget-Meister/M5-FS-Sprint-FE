@@ -1,9 +1,14 @@
 import React from 'react';
+import AvailableRooms from '../../../forms/AvailableRooms';
+import RoomCard from '../../../roomscards/RoomCard';
+
 
 const AllBookings = () => {
     return (
         <div>
-            All
+            <NavBar/>
+            <AvailableRooms/>
+            <RoomCard/>
         </div>
     );
 }

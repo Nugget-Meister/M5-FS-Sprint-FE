@@ -1,0 +1,16 @@
+.RoomCard {
+    border-style: solid;
+    border-color: black;
+    width: 20rem;
+    height: 6rem;
+    border-width: 0.15rem;
+    line-height: 0.15rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: left;
+    margin-bottom: 0.5rem;
+} 
