@@ -1,15 +1,22 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
+import {useNavigate} from 'react-router'
 
-const BookingCardS = ({data}) => {
-    // console.log(data)
+const BookingCardS = ({data, room}) => {
+    // console.log(data, room)
+    const navigate = useNavigate()
+
     return (
-        <Card className='text-start'>
+        <Card 
+            key={data.booking_id}
+            className='text-start btn btn-dark'
+            // onClick={() => navigate('/')}    
+                >
         <Card.Title>{data.name}</Card.Title>
-            <Card.Text>Room</Card.Text>
-            <Card.Text>Start</Card.Text>
-            <Card.Text>End</Card.Text>
-            <Card.Text>Floor</Card.Text>
+            <Card.Text>{room.name}</Card.Text>
+            <Card.Text>Start: {data.start_time}</Card.Text>
+            <Card.Text>End: {data.end_time}</Card.Text>
+            <Card.Text>Floor: {room.floor}</Card.Text>
     </Card>
     );
 }

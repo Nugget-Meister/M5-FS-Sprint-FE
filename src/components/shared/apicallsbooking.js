@@ -16,7 +16,11 @@ const getAllES = () => {
     .catch(err => console.error(err))
 }
 
-const getSingleES = () => {}
+const getSingleES = (id) => {
+    return fetch(`${URL}/eventspace/${id}`)
+    .then(res => res.json())
+    .catch(err => console.error(err))
+}
 const createES = () => {}
 const updateES = () => {}
 const deleteES = () => {}

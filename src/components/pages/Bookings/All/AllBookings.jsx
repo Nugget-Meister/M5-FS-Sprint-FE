@@ -6,8 +6,8 @@ import BookingCardS from "../subcomponents/BookingCardS";
 
 const AllBookings = () => {
 
-    const [bookings, setBookings] = useState([''])
-    const [rooms, setRooms] = useState([''])
+    const [bookings, setBookings] = useState([{}])
+    const [rooms, setRooms] = useState([{}])
 
     useEffect(() => {
 
@@ -30,14 +30,16 @@ const AllBookings = () => {
     // console.log(bookings);
 
   return (
-    <div>
-      <div>
-        {/* <h1>Bookings List:</h1> */}
-        {bookings.map((card) => {
-          return <BookingCardS data={card}/>;
+  <>
+        {bookings.map((data) => {
+          const room = rooms.filter(room => room.meeting_room_id == data.meeting_room_id)[0]
+          if(data.meeting_room_id){
+            return <BookingCardS key={data.booking_id} data={data} room={room}/>;
+          }
         })}
-      </div>
-    </div>
+  </>
+
+
   );
 };
 
