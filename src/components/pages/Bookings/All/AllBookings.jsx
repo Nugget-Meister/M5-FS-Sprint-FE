@@ -7,20 +7,20 @@ import BookingCardS from "../subcomponents/BookingCardS";
 const AllBookings = () => {
 
     const [bookings, setBookings] = useState([{}])
-    const [rooms, setRooms] = useState([{}])
+    const [rooms, setRooms] = useState(null)
 
     useEffect(() => {
 
         getAllBookings()
-        // .then(json => {
-        //     // console.log(json)
-        //     setBookings(json.data)
-        // })
-        // getAllES()
-        // .then(json => {
-        //     // console.log(json)
-        //     setRooms(json)
-        // })
+        .then(json => {
+            // console.log(json.data)
+            setBookings(json.data)
+        })
+        getAllES()
+        .then(json => {
+            // console.log(json)
+            setRooms(json)
+        })
         
         
       
@@ -30,13 +30,18 @@ const AllBookings = () => {
     // console.log(bookings);
 
   return (
-  <>
-        {bookings.map((data) => {
-          const room = rooms.filter(room => room.meeting_room_id == data.meeting_room_id)[0]
-          if(data.meeting_room_id){
-            return <BookingCardS key={data.booking_id} data={data} room={room}/>;
-          }
-        })}
+  <>x
+        {
+          bookings ? 
+            bookings.map((data) => {
+              if(data.meeting_room_id && rooms){
+                const room = rooms.filter(room => room.meeting_room_id == data.meeting_room_id)[0]
+                return <BookingCardS key={data.booking_id} data={data} room={room}/>;
+              }
+            })
+          : null
+        }
+        
   </>
 
 

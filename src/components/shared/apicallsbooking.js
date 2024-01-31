@@ -1,15 +1,15 @@
-const URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_LOCAL
+const URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_LOCAL || "http://localhost:8080"
 
 const getAllBookings = () => {
-    console.log(URL)
-    // return fetch(`${URL}/booking`)
-    // .then(res => {
-    //     console.log(res)
-    //     // res.json()
-    // })
-    // .catch(err => {
-    //     console.error(err)
-    // })
+    // console.log(URL)
+    return fetch(`${URL}/booking`)
+    .then(res => {
+        // console.log(res)
+       return res.json()
+    })
+    .catch(err => {
+        console.error(err)
+    })
 }
 const getSingleBooking = () => {}
 const createBooking = () => {}

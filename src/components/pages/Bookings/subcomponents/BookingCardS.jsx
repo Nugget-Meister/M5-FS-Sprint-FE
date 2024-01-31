@@ -10,7 +10,7 @@ const BookingCardS = ({data, room}) => {
         <Card 
             key={data.booking_id}
             className='text-start btn btn-dark'
-            // onClick={() => navigate('/')}    
+            onClick={() => navigate(`/bookings/${data.booking_id}`)}    
                 >
         <Card.Title>{data.name}</Card.Title>
             <Card.Text>{room.name}</Card.Text>
