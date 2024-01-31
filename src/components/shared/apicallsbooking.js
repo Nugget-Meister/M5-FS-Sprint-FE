@@ -20,7 +20,13 @@ const getSingleBooking = (id) => {
 }
 const createBooking = () => {}
 const updateBooking = () => {}
-const deleteBooking = () => {}
+const deleteBooking = (id) => {
+    const options = {
+        method: "DELETE"
+    }
+    return fetch(`${URL}/booking/${id}`, options)
+    .then(res => res.json())
+}
 
 const getAllES = () => {
     return fetch(`${URL}/eventspace`)
@@ -29,7 +35,7 @@ const getAllES = () => {
 }
 
 const getSingleES = (id) => {
-    console.log(`${URL}/eventspace/${id}`)
+    // console.log(`${URL}/eventspace/${id}`)
     return fetch(`${URL}/eventspace/${id}`)
     .then(res => res.json())
     .catch(err => console.error(err))

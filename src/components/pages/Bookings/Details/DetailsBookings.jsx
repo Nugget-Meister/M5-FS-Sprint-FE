@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-import { getSingleBooking, getSingleES } from '../../../shared/apicallsbooking';
+import { getSingleBooking, getSingleES, deleteBooking } from '../../../shared/apicallsbooking';
 import BookingCardS from '../subcomponents/BookingCardS';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+
 const DetailsBookings = () => {
     const [booking, setBooking] = useState(null)
     const [es, setES] = useState(null)
+    const navigate = useNavigate()
+
     const {id} = useParams()
 
     useEffect(() => {
@@ -15,18 +18,37 @@ const DetailsBookings = () => {
             setBooking(json.data)
             getSingleES(json.data.meeting_room_id)
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 setES(json)
             })
         })
 
     }, [])
 
-    const [room, setRoom] = useState(null)
+    const deleteItem = (id) => {
+        if(confirm(`Delete ${booking.name}?`)){
+            deleteBooking(id)
+            .then(json => {
+                console.log(json)
+                if(json.data.booking_id){
+                    alert(`Deleted ${json.data.name}`)
+                    navigate('/bookings')
+                }
+            })
+        } else {
+            console.log(false)
+        }
+    }
+
     return (
         <div>
             <BookingCardS data={booking} room={es}/>
-            <Button variant="danger">Cancel</Button>
+            <Button 
+                variant="danger"
+                onClick={()=> deleteItem(booking.booking_id)}
+                >
+                Cancel
+            </Button>
         </div>
     );
 }
