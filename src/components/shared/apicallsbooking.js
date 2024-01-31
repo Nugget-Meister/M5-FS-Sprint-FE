@@ -29,6 +29,7 @@ const getAllES = () => {
 }
 
 const getSingleES = (id) => {
+    console.log(`${URL}/eventspace/${id}`)
     return fetch(`${URL}/eventspace/${id}`)
     .then(res => res.json())
     .catch(err => console.error(err))

@@ -17,7 +17,6 @@ const BookingCardS = ({data, room}) => {
     }
 
 
-    console.log(data)
 
     return (
         <Card 
