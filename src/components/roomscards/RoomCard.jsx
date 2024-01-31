@@ -1,7 +1,7 @@
 import React from "react";
-import "./RoomCard.css"
+// import "./RoomCard.css"
 
-const RoomCard = () => {
+const RoomCard = ({data}) => {
     return (
         <div className="RoomCard">
             <h1>Meeting Room 1</h1>
