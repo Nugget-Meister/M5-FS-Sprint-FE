@@ -1,23 +1,45 @@
-const URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_LOCAL
+const URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_LOCAL || "http://localhost:8080"
 
 const getAllBookings = () => {
+    // console.log(URL)
     return fetch(`${URL}/booking`)
-    .then(res => res.json())
+    .then(res => {
+        // console.log(res)
+       return res.json()
+    })
+    .catch(err => {
+        console.error(err)
+    })
+}
+const getSingleBooking = (id) => {
+    return fetch(`${URL}/booking/${id}`)
+    .then(res => {
+        return res.json()
+    })
     .catch(err => console.error(err))
 }
-
-const getSingleBooking = () => {}
 const createBooking = () => {}
 const updateBooking = () => {}
-const deleteBooking = () => {}
+const deleteBooking = (id) => {
+    const options = {
+        method: "DELETE"
+    }
+    return fetch(`${URL}/booking/${id}`, options)
+    .then(res => res.json())
+}
 
 const getAllES = () => {
-    return fetch(`${URL}/ES`)
+    return fetch(`${URL}/eventspace`)
+    .then(res => res.json())
+    .catch(err => {console.error(err)})
+}
+
+const getSingleES = (id) => {
+    // console.log(`${URL}/eventspace/${id}`)
+    return fetch(`${URL}/eventspace/${id}`)
     .then(res => res.json())
     .catch(err => console.error(err))
 }
-
-const getSingleES = () => {}
 const createES = () => {}
 const updateES = () => {}
 const deleteES = () => {}
@@ -27,5 +49,10 @@ export{
     getSingleBooking,
     createBooking,
     updateBooking,
-    deleteBooking
+    deleteBooking,
+    getAllES,
+    getSingleES,
+    createES,
+    updateES,
+    deleteES
 }
