@@ -4,9 +4,7 @@ const AllES = () => {
     return (
         <div>
             All Event
-            {/* {
-                form
-                    4 inputs,
+            {/* {form4 inputs,
                     button:submit
 
                 lb
@@ -14,6 +12,7 @@ const AllES = () => {
                 esCard => name, capacity, floor
                 //border, 2 imges
              */}
+
         </div>
     );
 }

@@ -16,7 +16,15 @@ const getAllES = () => {
     .catch(err => console.error(err))
 }
 
-const getSingleES = () => {}
+const getBookingsForRoom = (id) => {
+    return fetch(`${URL}/eventspace/${id}`)
+        .then(res => res.json())
+        .catch(err => console.error(err));
+};
+
+const getSingleES = () => {
+    
+}
 const createES = () => {}
 const updateES = () => {}
 const deleteES = () => {}
@@ -26,5 +34,7 @@ export{
     getSingleBooking,
     createBooking,
     updateBooking,
-    deleteBooking
+    deleteBooking,
+    getSingleES,
+    getBookingsForRoom
 }
