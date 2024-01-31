@@ -1,10 +1,20 @@
-import React from 'react';
-import BookingCard from '../../../roomscards/BookingCard';
+import React, { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
+import { getSingleBooking, getSingleES } from '../../../shared/apicallsbooking';
+import BookingCardS from '../subcomponents/BookingCardS';
 const DetailsBookings = () => {
+    const [booking, setBooking] = useState(null)
+
+    useEffect(() => {
+        getSingleES()
+        getSingleBooking()
+    }, [])
+
+    const [room, setRoom] = useState(null)
     return (
         <div>
-           <BookingCard />
+            <BookingCardS data={booking} room={room}/>
            <Button variant="danger">Cancel</Button>
         </div>
     );

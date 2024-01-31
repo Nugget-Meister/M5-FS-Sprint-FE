@@ -3,8 +3,21 @@ import Card from 'react-bootstrap/Card'
 import {useNavigate} from 'react-router'
 
 const BookingCardS = ({data, room}) => {
-    // console.log(data, room)
+    // console.log(data, room, data == null)
     const navigate = useNavigate()
+    if(data == null){
+        data = {
+            name: '$value', start_time:'$value', end_time:'$value'
+        }
+    }
+    if(!room){
+        room = {
+            name: '$value', floor: '$value'
+        }
+    }
+
+
+    console.log(data)
 
     return (
         <Card 

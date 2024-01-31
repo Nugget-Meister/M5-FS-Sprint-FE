@@ -11,7 +11,13 @@ const getAllBookings = () => {
         console.error(err)
     })
 }
-const getSingleBooking = () => {}
+const getSingleBooking = (id) => {
+    return fetch(`${URL}/booking/${id}`)
+    .then(res => {
+        return res.json()
+    })
+    .catch(err => console.error(err))
+}
 const createBooking = () => {}
 const updateBooking = () => {}
 const deleteBooking = () => {}
