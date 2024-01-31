@@ -5,6 +5,7 @@ const getAllBookings = () => {
     .then(res => res.json())
     .catch(err => console.error(err))
 }
+
 const getSingleBooking = () => {}
 const createBooking = () => {}
 const updateBooking = () => {}
