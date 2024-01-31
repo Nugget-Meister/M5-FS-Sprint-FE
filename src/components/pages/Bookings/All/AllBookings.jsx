@@ -12,15 +12,15 @@ const AllBookings = () => {
     useEffect(() => {
 
         getAllBookings()
-        .then(json => {
-            // console.log(json)
-            setBookings(json.data)
-        })
-        getAllES()
-        .then(json => {
-            // console.log(json)
-            setRooms(json)
-        })
+        // .then(json => {
+        //     // console.log(json)
+        //     setBookings(json.data)
+        // })
+        // getAllES()
+        // .then(json => {
+        //     // console.log(json)
+        //     setRooms(json)
+        // })
         
         
       

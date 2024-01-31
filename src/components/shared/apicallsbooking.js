@@ -1,9 +1,15 @@
 const URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_LOCAL
 
 const getAllBookings = () => {
-    return fetch(`${URL}/booking`)
-    .then(res => res.json())
-    .catch(err => console.error(err))
+    console.log(URL)
+    // return fetch(`${URL}/booking`)
+    // .then(res => {
+    //     console.log(res)
+    //     // res.json()
+    // })
+    // .catch(err => {
+    //     console.error(err)
+    // })
 }
 const getSingleBooking = () => {}
 const createBooking = () => {}
@@ -13,7 +19,7 @@ const deleteBooking = () => {}
 const getAllES = () => {
     return fetch(`${URL}/eventspace`)
     .then(res => res.json())
-    .catch(err => console.error(err))
+    .catch(err => {console.error(err)})
 }
 
 const getSingleES = (id) => {
