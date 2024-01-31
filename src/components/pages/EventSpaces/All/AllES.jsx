@@ -1,21 +1,27 @@
-import React from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
+import { getAllBookings } from "../../../shared/apicallsbooking";
+import RoomCard from "../../../roomscards/RoomCard";
 
 const AllES = () => {
-    return (
-        <div>
-            All Event
-            {/* {
-                form
-                    4 inputs,
-                    button:submit
+  const [spaces, setSpaces] = useState([]);
 
-                lb
+  useEffect(() => {
+    getAllBookings()
+      .then((data) => {
+        if (data) {
+          setSpaces(data);
+        }
+      })
+      .catch((error) => console.error("There was an error.", error));
+  }, []);
 
-                esCard => name, capacity, floor
-                //border, 2 imges
-             */}
-        </div>
-    );
-}
+  return (
+    <div>
+    {spaces.map((space, index) => (
+      <RoomCard key={index} data={space} />
+    ))}
+  </div>
+);};
 
 export default AllES;

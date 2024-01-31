@@ -1,12 +1,12 @@
 import React from "react";
-// import "./RoomCard.css"
+import "./RoomCard.css"
 
 const RoomCard = ({data}) => {
     return (
         <div className="RoomCard">
-            <h1>Meeting Room 1</h1>
-            <p>Capacity: 6</p>
-            <p>Floor: 22</p>
+           <h1>{data.name}</h1>
+            <p>Capacity: {data.capacity}</p>
+            <p>Floor: {data.floor}</p>
         </div>
     );
 };
