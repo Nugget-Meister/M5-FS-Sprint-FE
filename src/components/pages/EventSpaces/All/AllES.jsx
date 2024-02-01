@@ -1,7 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getAllES} from "../../../shared/apicallsbooking";
+
+import { getAllES } from "../../../shared/apicallsbooking";
+
 import RoomCard from "../../../roomscards/RoomCard";
+import AvailableRooms from "../../../forms/AvailableRooms";
 
 const AllES = () => {
   const [spaces, setSpaces] = useState([]);
@@ -18,6 +21,9 @@ const AllES = () => {
 
   return (
     <div>
+        <div>
+            <AvailableRooms></AvailableRooms>
+        </div>
     {spaces.map((space, index) => (
       <RoomCard key={index} data={space} />
     ))}
