@@ -1,12 +1,22 @@
 import React from "react";
-import "./RoomCard.css"
+// import "./RoomCard.css"
+import Card from "react-bootstrap/Card"
+import {useNavigate} from 'react-router'
 
 const RoomCard = ({data}) => {
+    const navigate = useNavigate();
+
     return (
+        <div>
+        <Card
+        key = {data.meeting_room_id}
+        onClick={() => Navigate(`/events/${data.meeting_room_id}`)}>
         <div className="RoomCard">
-           <h1>{data.name}</h1>
-            <p>Capacity: {data.capacity}</p>
-            <p>Floor: {data.floor}</p>
+            <Card.Title>{data.name}</Card.Title>
+            <Card.Text>Capacity: {data.capacity}</Card.Text>
+            <Card.Text>Floor: {data.floor}</Card.Text>
+        </div>
+        </Card>
         </div>
     );
 };
