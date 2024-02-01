@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getAllBookings } from "../../../shared/apicallsbooking";
+import { getAllES } from "../../../shared/apicallsbooking";
 import RoomCard from "../../../roomscards/RoomCard";
 
 const AllES = () => {
   const [spaces, setSpaces] = useState([]);
 
   useEffect(() => {
-    getAllBookings()
+    getAllES()
       .then((data) => {
         if (data) {
           setSpaces(data);

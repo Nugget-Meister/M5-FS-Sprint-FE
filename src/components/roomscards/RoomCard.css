@@ -1,4 +1,4 @@
-.RoomCard {
+/* .RoomCard {
     border-style: solid;
     border-color: black;
     width: 20rem;
@@ -13,4 +13,21 @@
     justify-content: space-around;
     align-items: left;
     margin-bottom: 0.5rem;
-} 
+}  */
+
+.RoomCard {
+    border-style: solid;
+    border-color: black;
+    width: 20rem;
+    height: 9rem;
+    border-width: 0.15rem;
+    line-height: 20%;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: left;
+    margin-bottom: 0.5rem;
+}
