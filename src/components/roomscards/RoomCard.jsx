@@ -10,7 +10,7 @@ const RoomCard = ({data}) => {
         <div>
         <Card
         key = {data.meeting_room_id}
-        onClick={() => Navigate(`/events/${data.meeting_room_id}`)}>
+        onClick={() => navigate(`/events/${data.meeting_room_id}`)}>
         <div className="RoomCard">
             <Card.Title>{data.name}</Card.Title>
             <Card.Text>Capacity: {data.capacity}</Card.Text>
