@@ -40,7 +40,18 @@ const getSingleES = (id) => {
     .then(res => res.json())
     .catch(err => console.error(err))
 }
-const createES = () => {}
+const createES = (data) => {
+    const options = {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {'Content-Type': "application/json"}
+    }
+
+    return fetch(`${URL}/eventspace`)
+    .then(res => res.json())
+    .catch(err => console.error(err))
+}
+
 const updateES = () => {}
 const deleteES = () => {}
 

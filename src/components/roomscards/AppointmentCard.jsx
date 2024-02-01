@@ -1,12 +1,20 @@
 import React from "react";
 import "./AppointmentCard.css";
+import Card from 'react-bootstrap/Card'
 
-export default function AppointmentCard() {
-  return (
-    <div class="AppointmentCard">
-      <h2>Team Alpha - Scrum Standup</h2>
-      <p>Start: </p>
-      <p>End: </p>
-    </div>
-  );
+
+const AppointmentCard = ({data}) => {
+  
+    if(!data){
+      data = {name: '', start:'', end:''}
+    }
+    return (
+        <Card>
+          <h2>{data.name}</h2>
+          <p>{data.start_date}</p>
+          <p>{data.end_date}</p>
+        </Card>
+    );
 }
+ 
+export default AppointmentCard;
